@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/favicon.svg">
+  <link rel="icon" href="./static/findingdory-website-images/logo.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -83,7 +83,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -140,7 +140,7 @@
 
     <!-- Main Tasks. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h2 class="title is-3">Benchmark Tasks</h2>
         <div class="publication-image">
           <img src="./static/findingdory-website-images/all_tasks.png" 
@@ -159,7 +159,7 @@
     
     <!-- Results. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h2 class="title is-3">Results</h2>
       </div>
     </div>
@@ -170,7 +170,8 @@
         <h3 class="title is-4">Main Results</h3>
         <div class="content has-text-justified">
           <p>
-            Proprietary VLMs such as Gemini-2.0-flash and GPT-4o fail to perform appreciably across most FINDINGDORY task categories. Agents struggle significantly on multi-goal tasks where multiple subgoals are to be achieved sequentially based on the interaction videos collected during Phase 1 of the task (sometimes in a specific order). The Qwen-SFT baseline (see Appendix D.5) which is trained to predict ground-truth frame indices performs best but still reaches only ≈ 50% on the high-level tasks. This highlights a considerable gap in the spatio-temporal reasoning capabilities of frontier models.          </p>
+            Proprietary VLMs such as Gemini-2.0-flash and GPT-4o fail to perform appreciably across most FINDINGDORY task categories. Agents struggle significantly on multi-goal tasks where multiple subgoals are to be achieved sequentially based on the interaction videos. The Qwen-SFT baseline which is trained on the training set of FindingDory performs best but still reaches only ≈ 50% on the high-level tasks. This highlights a considerable gap in the spatio-temporal reasoning capabilities of frontier models.
+          </p>
         </div>
         <div class="publication-image">
           <img src="./static/findingdory-website-images/main_results.png" 
@@ -183,11 +184,11 @@
 
     <!-- Video Subsampling Results. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h3 class="title is-4">Video Subsampling Results</h3>
         <div class="content has-text-justified">
           <p>
-            We analyze how the number of input frames affects high-level performance by evaluating agents on subsampled interaction videos of varying lengths (Fig. 4a). This helps assess whether models benefit from longer histories or simply overfit to sparse visual cues. Interestingly, we observe that frozen VLMs—despite being capable of accepting long contexts—do not improve with more frames. In fact, their performance often degrades at higher frame counts (minimal subsampling), suggesting that they struggle to extract relevant information from densely packed, unfiltered input. This highlights a key limitation: na¨ıvely increasing context length does not help unless the model can effectively attend to localized events. In contrast, the fine-tuned model (Qwen SFT) demonstrates clear gains when trained with longer videos, leveraging additional context to improve reasoning. This indicates that with appropriate supervision, models can move beyond shallow matching and utilize richer temporal signals from the interaction history.
+            We analyze how the number of input frames affects high-level performance by evaluating agents on subsampled interaction videos. This helps assess whether models benefit from longer histories or simply overfit to sparse visual cues. Interestingly, we observe that frozen VLMs—despite being capable of accepting long contexts—do not improve with more frames. In contrast, the fine-tuned model (Qwen SFT) demonstrates clear gains when trained with longer videos, leveraging additional context to improve reasoning.
           </p>
         </div>
         <div class="publication-image">
@@ -201,17 +202,17 @@
 
     <!-- Low Level Policy Results. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-half">
+      <div class="column is-full">
         <h3 class="title is-4">Low Level Policy Results</h3>
         <div class="content has-text-justified">
           <p>
-            When Qwen is combined with an ImageNav or Mapping agent, the overall SR and SPL reduces significantly (seen in the LL-SR/LL-SPL metrics)
+            When Qwen is combined with low-level policies (ImageNav or Mapping agent), the overall Success Rate and SPL reduces significantly (seen in the Low-Level (LL) metrics).
           </p>
         </div>
         <div class="publication-image">
           <img src="./static/findingdory-website-images/low_level_results.png" 
                alt="Low level policy results showing performance comparison"
-               style="width: 100%; height: auto; background-color: white;">
+               style="width: 50%; height: auto; background-color: white;">
         </div>
       </div>
     </div>
@@ -225,18 +226,18 @@
     
     <!-- Qualitative Results. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h2 class="title is-3">Qualitative Results</h2>
       </div>
     </div>
 
     <!-- Example Video Sequence. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h3 class="title is-4">Example Video Sequence</h3>
         <div class="content has-text-justified">
           <p>
-            Example Video Sequence with 5 Collected during Phase 1 of FindingDory task
+            Example video with 5 rearrangement sequences during the experience collection phase.
           </p>
         </div>
         <div class="publication-video" style="position: relative; width: 100%; padding-bottom: 56.25%; /* 16:9 aspect ratio, adjust as needed */ overflow: hidden;">
@@ -251,7 +252,7 @@
 
     <!-- Agent Trajectory. -->
     <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
+      <div class="column is-full">
         <h3 class="title is-4">Agent Trajectory</h3>
         <div class="content has-text-justified">
           <p>
@@ -271,19 +272,18 @@
 </section>
 
 
-
-<!-- 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+    <pre><code>@article{yadav2024findingdory,
+  title={FindingDory: A Benchmark to Evaluate Memory in Embodied Agents},
+  author={Yadav, Karmesh and Ali, Yusuf and Gupta, Gunshi and Gal, Yarin and Kira, Zsolt},
+  journal={arXiv preprint arXiv:2506.15635},
+  year={2025},
+  url={https://arxiv.org/abs/2506.15635}
 }</code></pre>
   </div>
-</section> -->
+</section>
 
 
 <footer class="footer">
