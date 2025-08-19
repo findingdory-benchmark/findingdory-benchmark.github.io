@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/findingdory-website-images/logo.png">
+  <link rel="icon" href="./static/media/logo.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -135,7 +135,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <div class="publication-image">
-          <img src="./static/findingdory-website-images/teaser.png" 
+          <img src="./static/media/teaser.png" 
                alt="FindingDory Benchmark Overview Figure"
                style="width: 100%; height: auto;">
         </div>
@@ -163,7 +163,7 @@
       <div class="column is-full">
         <h2 class="title is-3">Benchmark Tasks</h2>
         <div class="publication-image">
-          <img src="./static/findingdory-website-images/all_tasks.png" 
+          <img src="./static/media/all_tasks.png" 
                alt="FindingDory Benchmark Tasks"
                style="width: 100%; height: auto;">
         </div>
@@ -194,7 +194,7 @@
           </p>
         </div>
         <div class="publication-image">
-          <img src="./static/findingdory-website-images/main_results.png" 
+          <img src="./static/media/main_results.png" 
                alt="Main results showing performance of different VLMs on FindingDory benchmark"
                style="width: 100%; height: auto;">
         </div>
@@ -212,7 +212,7 @@
           </p>
         </div>
         <div class="publication-image">
-          <img src="./static/findingdory-website-images/subsampling_results.png" 
+          <img src="./static/media/subsampling_results.png" 
                alt="Video subsampling results comparing different sampling strategies"
                style="width: 100%; height: auto;">
         </div>
@@ -220,23 +220,39 @@
     </div>
     <!--/ Video Subsampling Results. -->
 
-    <!-- Low Level Policy Results. -->
+    <!-- Other Results. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
-        <h3 class="title is-4">Low Level Policy Results</h3>
-        <div class="content has-text-justified">
-          <p>
-            When Qwen is combined with low-level policies (ImageNav or Mapping agent), the overall Success Rate and SPL reduces significantly (seen in the Low-Level (LL) metrics).
-          </p>
-        </div>
-        <div class="publication-image">
-          <img src="./static/findingdory-website-images/low_level_results.png" 
-               alt="Low level policy results showing performance comparison"
-               style="width: 50%; height: auto; background-color: white;">
+        <h3 class="title is-4">Other Results</h3>
+        <div class="columns is-centered" style="margin-top: 2rem;">
+          <div class="column is-half">
+            <div class="publication-image">
+              <img src="./static/media/sem_dtg_receptacle.png" 
+                  alt="Semantic Coverage Plot for Receptacle"
+                  style="width: 100%; height: auto; background-color: white;">
+              <div class="content has-text-justified">
+                <p>
+                  Models identify the correct receptacles (achiving high semantic coverage) but a lot of the times choose frames far from the goal.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="column is-half">
+            <div class="publication-image">
+              <img src="./static/media/efficiency.png"
+                   alt="Efficiency metrics comparison"
+                   style="width: 100%; height: auto; background-color: white;">
+                <div class="content has-text-justified">
+                <p>
+                  Qwen VLM combined with low-level policies leads to a significant reduction in Success Rate and SPL (see Low-Level (LL) metrics).
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <!--/ Low Level Policy Results. -->
+    <!--/ Other Results. -->
 
   </div>
 </section>
@@ -251,20 +267,46 @@
       </div>
     </div>
 
-    <!-- Example Video Sequence. -->
+    <!-- Example Video Sequences. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-full">
-        <h3 class="title is-4">Example Video Sequence</h3>
+        <h3 class="title is-4">Example Video Sequences</h3>
         <div class="content has-text-justified">
           <p>
-            Example video with 5 rearrangement sequences during the experience collection phase.
+            Example videos showing rearrangement sequences during the experience collection phase. Use the navigation arrows to browse through different episodes.
           </p>
         </div>
-        <div class="publication-video" style="position: relative; width: 100%; padding-bottom: 56.25%; /* 16:9 aspect ratio, adjust as needed */ overflow: hidden;">
-          <video id="qualitative-video" controls muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain;">
-            <source src="./static/findingdory-website-images/ep_id_327_web.mp4"
-                    type="video/mp4">
-          </video>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-327">
+            <video poster="" id="327" controls muted loop playsinline height="100%">
+              <source src="./static/media/videos/ep_id_327.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-1242">
+            <video poster="" id="1242" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/media/videos/ep_id_1242.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-2835">
+            <video poster="" id="2835" controls muted loop playsinline height="100%">
+              <source src="./static/media/videos/ep_id_2835.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-3371">
+            <video poster="" id="3371" controls muted loop playsinline height="100%">
+              <source src="./static/media/videos/ep_id_3371.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-819">
+            <video poster="" id="819" controls muted loop playsinline height="100%">
+              <source src="./static/media/videos/ep_id_819.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-89">
+            <video poster="" id="89" controls muted loop playsinline height="100%">
+              <source src="./static/media/videos/ep_id_89.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
       </div>
     </div>
@@ -280,7 +322,7 @@
           </p>
         </div>
         <div class="publication-image">
-          <img src="./static/findingdory-website-images/qualitative_traj.png" 
+          <img src="./static/media/qualitative_traj.png" 
                alt="Bird's eye view of agent trajectory during FindingDory task"
                style="width: 100%; height: auto;">
         </div>
